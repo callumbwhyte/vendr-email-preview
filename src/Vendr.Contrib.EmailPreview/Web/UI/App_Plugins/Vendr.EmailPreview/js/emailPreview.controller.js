@@ -4,7 +4,7 @@
 
     angular.module('vendr')
         .controller('Vendr.EmailPreviewController',
-            function ($scope, umbRequestHelper) {
+            function ($scope, $timeout, umbRequestHelper) {
 
                 var vm = this;
 
@@ -14,8 +14,6 @@
                         vm.templateId = $scope.model.context.templateId;
                         vm.culture = $scope.model.context.culture;
                     }
-
-                    vm.loadPreview(data.storeId, vm.templateId, vm.orderId, vm.culture);
                 };
 
                 vm.loadPreview = function (storeId, templateId, orderId, culture) {
@@ -39,6 +37,20 @@
                 $scope.$on('$includeContentLoaded', function () {
                     vm.loading = false;
                 });
+
+                $timeout(function () {
+                    $('.vendr-search__input').unbind('typeahead:selected');
+
+                    $('.vendr-search__input').unbind('typeahead:autocompleted');
+
+                    $(document).on('typeahead:selected', '.vendr-search__input', function (e, data) {
+                        vm.loadPreview(data.storeId, vm.templateId, data.id, vm.culture);
+                    });
+
+                    $(document).on('typeahead:autocompleted', '.vendr-search__input', function (e, data) {
+                        vm.loadPreview(data.storeId, vm.templateId, data.id, vm.culture);
+                    });
+                }, 500);
 
             });
 

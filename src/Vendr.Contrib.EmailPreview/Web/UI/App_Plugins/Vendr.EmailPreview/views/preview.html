@@ -11,9 +11,17 @@
 
         <umb-editor-container>
 
+            <umb-box>
+                <vendr-order-search store-id="vm.storeId"></vendr-order-search>
+            </umb-box>
+
             <umb-load-indicator ng-show="vm.loading"></umb-load-indicator>
 
             <div ng-show="!vm.loading">
+                <umb-empty-state position="center" ng-if="!vm.view">
+                    <localize key="general_typeToSearch"></localize>
+                </umb-empty-state>
+
                 <div ng-include="vm.view" ng-if="vm.view"></div>
             </div>
 
