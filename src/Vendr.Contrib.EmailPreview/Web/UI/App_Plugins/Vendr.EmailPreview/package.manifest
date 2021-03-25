@@ -1,5 +1,6 @@
 ﻿{
   "javascript": [
-    "~/App_Plugins/Vendr.EmailPreview/js/emailPreview.service.js"
+    "~/App_Plugins/Vendr.EmailPreview/js/emailPreview.service.js",
+    "~/App_Plugins/Vendr.EmailPreview/js/emailPreview.controller.js"
   ]
 }
