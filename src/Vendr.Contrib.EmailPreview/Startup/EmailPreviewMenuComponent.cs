@@ -39,6 +39,8 @@ namespace Vendr.Contrib.EmailPreview.Startup
                         Icon = "eye"
                     };
 
+                    menuItem.AdditionalData.Add("jsAction", "vendrEmailPreviewService.openDialog");
+
                     e.Menu.Items.Add(menuItem);
                 }
             }
