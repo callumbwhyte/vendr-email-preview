@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <Version Condition="'$(BUILD_BUILDNUMBER)' == ''">1.0.0.0</Version>
+    <Version Condition="'$(BUILD_BUILDNUMBER)' != ''">$(BUILD_BUILDNUMBER)</Version>
+    <Description>Preview Vendr email templates directly within settings</Description>
+    <Authors>Callum Whyte</Authors>
+    <Copyright>Copyright © 2021 Callum Whyte, and other contributors</Copyright>
+    <PackageIconUrl>https://raw.githubusercontent.com/callumbwhyte/vendr-email-preview/main/docs/img/logo.png</PackageIconUrl>
+    <PackageLicenseUrl>https://github.com/callumbwhyte/vendr-email-preview/blob/main/LICENSE.md</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/callumbwhyte/vendr-email-preview</PackageProjectUrl>
+    <PackageTags>umbraco ecommerce vendr email</PackageTags>
+    <RepositoryUrl>https://github.com/callumbwhyte/vendr-email-preview</RepositoryUrl>
+    <RepositoryType>Git</RepositoryType>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+</Project>
