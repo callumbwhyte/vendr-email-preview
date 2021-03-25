@@ -19,6 +19,7 @@
                 };
 
                 vm.loadPreview = function (storeId, templateId, orderId, culture) {
+                    vm.loading = true;
                     vm.view = '/umbraco/backoffice/vendr/EmailPreview/RenderPreview?' + umbRequestHelper.dictionaryToQueryString({
                         storeId: storeId,
                         templateId: templateId,
@@ -34,6 +35,10 @@
                 };
 
                 vm.init();
+
+                $scope.$on('$includeContentLoaded', function () {
+                    vm.loading = false;
+                });
 
             });
 
