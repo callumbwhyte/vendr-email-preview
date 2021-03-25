@@ -9,6 +9,12 @@
                            hide-description="true">
         </umb-editor-header>
 
+        <umb-editor-container>
+
+            <div ng-include="vm.view" ng-if="vm.view"></div>
+
+        </umb-editor-container>
+
         <umb-editor-footer>
 
             <umb-editor-footer-content-right>
